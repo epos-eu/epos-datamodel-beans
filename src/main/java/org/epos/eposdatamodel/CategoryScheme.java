@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * This property contains a name of the category scheme. May be repeated for different versions of the name.
  */
-public class CategoryScheme {
+public class CategoryScheme extends EPOSDataModelEntity {
 
     /**
      * This property contains a description of the category scheme.

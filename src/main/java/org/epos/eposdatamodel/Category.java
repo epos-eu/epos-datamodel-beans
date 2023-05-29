@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * A subject of a Class.
  */
-public class Category {
+public class Category extends EPOSDataModelEntity {
     /**
      * This property contains a description of the category
      */
