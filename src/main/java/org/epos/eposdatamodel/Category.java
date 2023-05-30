@@ -1,5 +1,6 @@
 package org.epos.eposdatamodel;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -25,6 +26,16 @@ public class Category extends EPOSDataModelEntity {
      * This property contains a name of the category scheme.
      */
     private String uid;
+    
+    /**
+     * This property contains a name of the category scheme.
+     */
+    private String broader;
+    
+    /**
+     * This property contains a name of the category scheme.
+     */
+    private List<String> narrower;
 
 
     public String getDescription() {
@@ -59,7 +70,23 @@ public class Category extends EPOSDataModelEntity {
         this.uid = uid;
     }
 
-    @Override
+    public String getBroader() {
+		return broader;
+	}
+
+	public void setBroader(String broader) {
+		this.broader = broader;
+	}
+
+	public List<String> getNarrower() {
+		return narrower;
+	}
+
+	public void setNarrower(List<String> narrower) {
+		this.narrower = narrower;
+	}
+
+	@Override
     public String toString() {
         return "Category{" +
                 "description='" + description + '\'' +
