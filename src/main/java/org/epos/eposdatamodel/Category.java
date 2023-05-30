@@ -20,6 +20,11 @@ public class Category extends EPOSDataModelEntity {
      * This property contains a preferred label of the category
      */
     private String name;
+    
+    /**
+     * This property contains a name of the category scheme.
+     */
+    private String uid;
 
 
     public String getDescription() {
@@ -44,6 +49,14 @@ public class Category extends EPOSDataModelEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     @Override

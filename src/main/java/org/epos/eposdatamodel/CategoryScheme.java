@@ -16,6 +16,11 @@ public class CategoryScheme extends EPOSDataModelEntity {
      * This property contains a name of the category scheme.
      */
     private String title;
+    
+    /**
+     * This property contains a name of the category scheme.
+     */
+    private String uid;
 
     public String getDescription() {
         return description;
@@ -31,6 +36,15 @@ public class CategoryScheme extends EPOSDataModelEntity {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+   
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     @Override
