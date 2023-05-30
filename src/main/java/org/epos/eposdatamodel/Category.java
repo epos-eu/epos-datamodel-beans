@@ -14,7 +14,7 @@ public class Category extends EPOSDataModelEntity {
     /**
      * Relates a resource (for example a concept) to a concept scheme in which it is included.
      */
-    private CategoryScheme inScheme;
+    private String inScheme;
 
     /**
      * This property contains a preferred label of the category
@@ -35,11 +35,11 @@ public class Category extends EPOSDataModelEntity {
         this.description = description;
     }
 
-    public CategoryScheme getInScheme() {
+    public String getInScheme() {
         return inScheme;
     }
 
-    public void setInScheme(CategoryScheme inScheme) {
+    public void setInScheme(String inScheme) {
         this.inScheme = inScheme;
     }
 
