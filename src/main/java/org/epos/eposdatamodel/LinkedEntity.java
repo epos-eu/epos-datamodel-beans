@@ -21,7 +21,7 @@ public class LinkedEntity {
     /**
      * The entity type of the related instance (e.g. DataProduct, Equipment...)
      */
-    private String EntityType;
+    private String entityType;
 
     /**
      * The metaId of the related instance
@@ -34,7 +34,7 @@ public class LinkedEntity {
         return "LinkedEntity{" +
                 "instanceId='" + instanceId + '\'' +
                 ", uid='" + uid + '\'' +
-                ", EntityType='" + EntityType + '\'' +
+                ", EntityType='" + entityType + '\'' +
                 ", metaId='" + metaId + '\'' +
                 '}';
     }
@@ -63,7 +63,7 @@ public class LinkedEntity {
     }
 
     public LinkedEntity entityType(String entityType) {
-        EntityType = entityType;
+    	this.entityType = entityType;
         return this;
     }
 
@@ -89,11 +89,11 @@ public class LinkedEntity {
     }
 
     public String getEntityType() {
-        return EntityType;
+        return entityType;
     }
 
     public void setEntityType(String entityType) {
-        EntityType = entityType;
+        this.entityType = entityType;
     }
 
     public String getMetaId() {
