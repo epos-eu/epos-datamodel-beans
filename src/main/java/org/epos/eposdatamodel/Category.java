@@ -30,7 +30,7 @@ public class Category extends EPOSDataModelEntity {
     /**
      * This property contains a name of the category scheme.
      */
-    private String broader;
+    private List<String> broader;
     
     /**
      * This property contains a name of the category scheme.
@@ -70,11 +70,11 @@ public class Category extends EPOSDataModelEntity {
         this.uid = uid;
     }
 
-    public String getBroader() {
+    public List<String> getBroader() {
 		return broader;
 	}
 
-	public void setBroader(String broader) {
+	public void setBroader(List<String> broader) {
 		this.broader = broader;
 	}
 
