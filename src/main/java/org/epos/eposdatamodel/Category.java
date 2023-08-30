@@ -106,6 +106,26 @@ public class Category extends EPOSDataModelEntity {
             this.getBroader().add(broader);
         }
     }
+	
+	public void addNarrower(Category narrower) {
+        if (this.getNarrower() == null) {
+            ArrayList<String> narrowers = new ArrayList<>();
+            narrowers.add(narrower.getUid());
+            this.setNarrower(narrowers);
+        } else {
+            this.getNarrower().add(narrower.getUid());
+        }
+    }
+	
+	public void addBroader(Category broader) {
+        if (this.getBroader() == null) {
+            ArrayList<String> broaders = new ArrayList<>();
+            broaders.add(broader.getUid());
+            this.setBroader(broaders);
+        } else {
+            this.getBroader().add(broader.getUid());
+        }
+    }
 
 	@Override
     public String toString() {
