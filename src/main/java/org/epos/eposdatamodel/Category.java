@@ -1,5 +1,6 @@
 package org.epos.eposdatamodel;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -85,6 +86,26 @@ public class Category extends EPOSDataModelEntity {
 	public void setNarrower(List<String> narrower) {
 		this.narrower = narrower;
 	}
+	
+	public void addNarrower(String narrower) {
+        if (this.getNarrower() == null) {
+            ArrayList<String> narrowers = new ArrayList<>();
+            narrowers.add(narrower);
+            this.setNarrower(narrowers);
+        } else {
+            this.getNarrower().add(narrower);
+        }
+    }
+	
+	public void addBroader(String broader) {
+        if (this.getBroader() == null) {
+            ArrayList<String> broaders = new ArrayList<>();
+            broaders.add(broader);
+            this.setBroader(broaders);
+        } else {
+            this.getBroader().add(broader);
+        }
+    }
 
 	@Override
     public String toString() {
