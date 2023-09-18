@@ -97,6 +97,12 @@ public class WebService extends EPOSDataModelEntity {
      * Reverse reference to the related distribution.
      */
     private List<LinkedEntity> distribution;
+    
+    /**
+     * It represents the link to another Epos resource.
+     */
+    private List<LinkedEntity> relation;
+
 
     /**
      * List of possible authentication/authorization methods supported.
@@ -511,6 +517,14 @@ public class WebService extends EPOSDataModelEntity {
         this.distribution = distribution;
         return this;
     }
+    
+    public List<LinkedEntity> getRelation() {
+        return relation;
+    }
+
+    public void setRelation(List<LinkedEntity> relation) {
+        this.relation = relation;
+    }
 
     @Override
     public String toString() {
@@ -532,6 +546,7 @@ public class WebService extends EPOSDataModelEntity {
                 ", supportedOperation=" + supportedOperation +
                 ", temporalExtent=" + temporalExtent +
                 ", distribution=" + distribution +
+                ", relation=" + relation +
                 ", aaaiTypes='" + aaaiTypes + '\'' +
                 "} " + super.toString();
     }
@@ -542,7 +557,7 @@ public class WebService extends EPOSDataModelEntity {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         WebService that = (WebService) o;
-        return Objects.equals(getIdentifier(), that.getIdentifier()) && Objects.equals(getSchemaIdentifier(), that.getSchemaIdentifier()) && Objects.equals(getCategory(), that.getCategory()) && Objects.equals(getContactPoint(), that.getContactPoint()) && Objects.equals(getDateModified(), that.getDateModified()) && Objects.equals(getDatePublished(), that.getDatePublished()) && Objects.equals(getDescription(), that.getDescription()) && Objects.equals(getDocumentation(), that.getDocumentation()) && Objects.equals(getEntryPoint(), that.getEntryPoint()) && Objects.equals(getKeywords(), that.getKeywords()) && Objects.equals(getLicense(), that.getLicense()) && Objects.equals(getName(), that.getName()) && Objects.equals(getProvider(), that.getProvider()) && Objects.equals(getSpatialExtent(), that.getSpatialExtent()) && Objects.equals(getSupportedOperation(), that.getSupportedOperation()) && Objects.equals(getTemporalExtent(), that.getTemporalExtent()) && Objects.equals(getDistribution(), that.getDistribution()) && Objects.equals(getAaaiTypes(), that.getAaaiTypes());
+        return Objects.equals(getIdentifier(), that.getIdentifier()) && Objects.equals(getSchemaIdentifier(), that.getSchemaIdentifier()) && Objects.equals(getCategory(), that.getCategory()) && Objects.equals(getContactPoint(), that.getContactPoint()) && Objects.equals(getDateModified(), that.getDateModified()) && Objects.equals(getDatePublished(), that.getDatePublished()) && Objects.equals(getDescription(), that.getDescription()) && Objects.equals(getDocumentation(), that.getDocumentation()) && Objects.equals(getEntryPoint(), that.getEntryPoint()) && Objects.equals(getKeywords(), that.getKeywords()) && Objects.equals(getLicense(), that.getLicense()) && Objects.equals(getName(), that.getName()) && Objects.equals(getProvider(), that.getProvider()) && Objects.equals(getSpatialExtent(), that.getSpatialExtent()) && Objects.equals(getSupportedOperation(), that.getSupportedOperation()) && Objects.equals(getTemporalExtent(), that.getTemporalExtent()) && Objects.equals(getDistribution(), that.getDistribution()) && Objects.equals(getAaaiTypes(), that.getAaaiTypes()) && Objects.equals(getRelation(), that.getRelation());
     }
 
     @Override
