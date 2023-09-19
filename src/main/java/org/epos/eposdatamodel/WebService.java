@@ -101,7 +101,7 @@ public class WebService extends EPOSDataModelEntity {
     /**
      * It represents the link to another Epos resource.
      */
-    private List<LinkedEntity> relation;
+    private List<String> relation;
 
 
     /**
@@ -518,11 +518,11 @@ public class WebService extends EPOSDataModelEntity {
         return this;
     }
     
-    public List<LinkedEntity> getRelation() {
+    public List<String> getRelation() {
         return relation;
     }
 
-    public void setRelation(List<LinkedEntity> relation) {
+    public void setRelation(List<String> relation) {
         this.relation = relation;
     }
 
