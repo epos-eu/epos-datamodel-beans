@@ -101,13 +101,24 @@ public class WebService extends EPOSDataModelEntity {
     /**
      * It represents the link to another Epos resource.
      */
-    private List<String> relation;
+    private List<LinkedEntity> relation;
 
 
     /**
      * List of possible authentication/authorization methods supported.
      */
     private String aaaiTypes;
+    
+
+    public void addRelation(LinkedEntity relation) {
+        if (this.getRelation() == null) {
+            ArrayList<LinkedEntity> relationList = new ArrayList<>();
+            relationList.add(relation);
+            this.setRelation(relationList);
+        } else {
+            this.getRelation().add(relation);
+        }
+    }
 
 
     public void addSpatialExtent(Location spatialExtent) {
@@ -518,11 +529,11 @@ public class WebService extends EPOSDataModelEntity {
         return this;
     }
     
-    public List<String> getRelation() {
+    public List<LinkedEntity> getRelation() {
         return relation;
     }
 
-    public void setRelation(List<String> relation) {
+    public void setRelation(List<LinkedEntity> relation) {
         this.relation = relation;
     }
 
