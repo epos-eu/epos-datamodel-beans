@@ -19,7 +19,7 @@ public class Distribution extends EPOSDataModelEntity {
      * This property contains a URL that gives access to a Distribution of the Data Product. The resource at the access
      * URL may contain information about how to get the Data Product.
      **/
-    private List<String> accessURL = new ArrayList<>();
+    private List<LinkedEntity> accessURL = new ArrayList<>();
 
     /**
      * This property contains a free-text account of the Distribution. This property can be repeated for parallel language
@@ -110,9 +110,9 @@ public class Distribution extends EPOSDataModelEntity {
         }
     }
 
-    public void addAccessURL(String accessURL) {
+    public void addAccessURL(LinkedEntity accessURL) {
         if (this.getAccessURL() == null) {
-            ArrayList<String> accessURLList = new ArrayList<>();
+            ArrayList<LinkedEntity> accessURLList = new ArrayList<>();
             accessURLList.add(accessURL);
             this.setAccessURL(accessURLList);
         } else {
@@ -121,12 +121,12 @@ public class Distribution extends EPOSDataModelEntity {
     }
 
 
-    public Distribution accessURL(List<String> accessURL) {
+    public Distribution accessURL(List<LinkedEntity> accessURL) {
         this.accessURL = accessURL;
         return this;
     }
 
-    public Distribution addAccessURLItem(String accessURLItem) {
+    public Distribution addAccessURLItem(LinkedEntity accessURLItem) {
         this.accessURL.add(accessURLItem);
         return this;
     }
@@ -136,11 +136,11 @@ public class Distribution extends EPOSDataModelEntity {
      *
      * @return accessURL
      **/
-    public List<String> getAccessURL() {
+    public List<LinkedEntity> getAccessURL() {
         return accessURL;
     }
 
-    public void setAccessURL(List<String> accessURL) {
+    public void setAccessURL(List<LinkedEntity> accessURL) {
         this.accessURL = accessURL;
     }
 
