@@ -28,19 +28,26 @@ jobs:
           allowUpdates: true
           artifacts: "${{ github.workspace }}/target/*.jar"
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Echo secrets
+      - name: Configure GPG Key
         run: |
-          mkdir -p ~/.gnupg/
-          printf "$GPG_PRIVATE_KEY" | base64 --decode > ~/.gnupg/private.key
-          gpg --batch --import ~/.gnupg/private.key
-        shell: bash
-        env:
-          GPG_PRIVATE_KEY : ${{ secrets.GPG_PRIVATE_KEY }}
+          # Install gpg secret key
+          cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
+          # Verify gpg secret key
+          gpg --list-secret-keys --keyid-format LONG
+        #run: |
+        #  mkdir -p ~/.gnupg/
+        #  printf "$GPG_SIGNING_KEY" | base64 --decode > ~/.gnupg/private.key
+        #  gpg --import ~/.gnupg/private.key
+        #env:
+        #  GPG_SECRET_KEY: ${{ secrets.GPG_SECRET_KEY }}
       - name: Publish to the Maven Central Repository
         run: |
-          mvn clean deploy -Dmaven.test.skip=true
+          mvn \
+            --no-transfer-progress \
+            --batch-mode \
+            -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} \
+            clean deploy -Dmaven.test.skip=true
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-          GPG_PRIVATE_KEY : ${{ secrets.GPG_PRIVATE_KEY }}
