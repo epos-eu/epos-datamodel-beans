@@ -11,7 +11,7 @@ public class Documentation {
 
     private String description = null;
 
-    private String URI = null;
+    private String uri = null;
 
     public Documentation title(String title) {
         this.title = title;
@@ -51,8 +51,8 @@ public class Documentation {
         this.description = description;
     }
 
-    public Documentation URI(String URI) {
-        this.URI = URI;
+    public Documentation uri(String uri) {
+        this.uri = uri;
         return this;
     }
 
@@ -62,12 +62,12 @@ public class Documentation {
      * @return uri
      **/
 
-    public String getURI() {
-        return URI;
+    public String getUri() {
+        return uri;
     }
 
-    public void setURI(String URI) {
-        this.URI = URI;
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
 
@@ -82,12 +82,12 @@ public class Documentation {
         Documentation documentation = (Documentation) o;
         return Objects.equals(this.title, documentation.title) &&
                 Objects.equals(this.description, documentation.description) &&
-                Objects.equals(this.URI, documentation.URI);
+                Objects.equals(this.uri, documentation.uri);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, description, URI);
+        return Objects.hash(title, description, uri);
     }
 
     @Override
@@ -95,7 +95,7 @@ public class Documentation {
         return "Documentation{" +
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", URI='" + URI + '\'' +
+                ", URI='" + uri + '\'' +
                 '}';
     }
 }
