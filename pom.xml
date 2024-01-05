@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.epos-eu.ics-c</groupId>
 	<artifactId>epos-data-model-beans</artifactId>
-	<version>CI_COMMIT_REF_NAME</version>
+	<version>1.3.10</version>
 	<name>EPOS Data Model bean</name>
 	<description>Beans useful to interact with EPOS Metadata Catalogue</description>
 	<url>https://epos-ci.brgm.fr/epos/epos_data_model_beans.git</url>
