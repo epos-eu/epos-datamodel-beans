@@ -108,24 +108,31 @@ public class Category extends EPOSDataModelEntity {
     }
 
 	@Override
-    public String toString() {
-        return "Category{" +
-                "description='" + description + '\'' +
-                ", inScheme=" + inScheme +
-                ", name='" + name + '\'' +
-                '}';
-    }
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Objects.hash(broader, description, inScheme, name, narrower, uid);
+		return result;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Category category = (Category) o;
-        return Objects.equals(getDescription(), category.getDescription()) && Objects.equals(getInScheme(), category.getInScheme()) && Objects.equals(getName(), category.getName());
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Category other = (Category) obj;
+		return Objects.equals(broader, other.broader) && Objects.equals(description, other.description)
+				&& Objects.equals(inScheme, other.inScheme) && Objects.equals(name, other.name)
+				&& Objects.equals(narrower, other.narrower) && Objects.equals(uid, other.uid);
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getDescription(), getInScheme(), getName());
-    }
+	@Override
+	public String toString() {
+		return "Category [description=" + description + ", inScheme=" + inScheme + ", name=" + name + ", uid=" + uid
+				+ ", broader=" + broader + ", narrower=" + narrower + "]";
+	}
+	
 }
