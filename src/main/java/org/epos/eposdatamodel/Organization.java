@@ -57,7 +57,7 @@ public class Organization extends EPOSDataModelEntity {
     /**
      * This property refers to a Facility or Equipment of which it is the owner.
      **/
-    private List<String> owns;
+    private List<LinkedEntity> owns;
 
     /**
      * This property contains the telephone number of the Organization.
@@ -273,12 +273,12 @@ public class Organization extends EPOSDataModelEntity {
     }
 
 
-    public Organization owns(List<String> owns) {
+    public Organization owns(List<LinkedEntity> owns) {
         this.owns = owns;
         return this;
     }
 
-    public Organization addOwnsItem(String ownsItem) {
+    public Organization addOwnsItem(LinkedEntity ownsItem) {
         if (this.owns == null) {
             this.owns = new ArrayList<>();
         }
@@ -292,11 +292,11 @@ public class Organization extends EPOSDataModelEntity {
      * @return owns
      **/
 
-    public List<String> getOwns() {
+    public List<LinkedEntity> getOwns() {
         return owns;
     }
 
-    public void setOwns(List<String> owns) {
+    public void setOwns(List<LinkedEntity> owns) {
         this.owns = owns;
     }
 
