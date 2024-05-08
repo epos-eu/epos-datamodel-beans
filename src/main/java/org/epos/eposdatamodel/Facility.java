@@ -31,6 +31,11 @@ public class Facility extends EPOSDataModelEntity {
 	 * This property contains a free-text description of the Facility.
 	 **/
 	private String description;
+	
+	/**
+	 * This property contains a free-text description of the Facility.
+	 **/
+	private String identifier;
 
 	/**
 	 * This property refers to a Facility in which the described Facility is included.
@@ -56,6 +61,27 @@ public class Facility extends EPOSDataModelEntity {
 	 * This property contains a name given to the Facility.
 	 **/
 	private String title;
+	
+
+	public Facility identifier(String identifier) {
+		this.identifier = identifier;
+		return this;
+	}
+
+	/**
+	 * This property contains a identifier given to the Equipment.
+	 *
+	 * @return identifier
+	 **/
+
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+	}
+	
 
 	/**
 	 * This property refers to the type of the Facility.

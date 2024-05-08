@@ -48,6 +48,11 @@ public class Equipment extends EPOSDataModelEntity {
 	 * This property contains a name given to the Equipment.
 	 **/
 	private String name;
+	
+	/**
+	 * This property contains a name given to the Equipment.
+	 **/
+	private String identifier;
 
 	/**
 	 * This property refers to a page or document about the Equipment
@@ -232,6 +237,25 @@ public class Equipment extends EPOSDataModelEntity {
 	}
 
 
+	public Equipment identifier(String identifier) {
+		this.identifier = identifier;
+		return this;
+	}
+
+	/**
+	 * This property contains a identifier given to the Equipment.
+	 *
+	 * @return identifier
+	 **/
+
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+	}
+	
 	public Equipment name(String name) {
 		this.name = name;
 		return this;
